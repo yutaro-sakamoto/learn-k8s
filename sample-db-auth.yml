@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sample-db-auth
+type: Opaque
+data:
+  username: cm9vda==
+  password: cm9vdHbhc3N3b3Jk
