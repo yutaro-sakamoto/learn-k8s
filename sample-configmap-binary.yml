@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sample-configmap-binary
+  creationTimestamp: null
+binaryData:
+  image.jpg: /9j/
+data:
+  index.html: Hello, Kubernetes
