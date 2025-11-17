@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-readinessgate
+  labels:
+    app: sample-app
+spec:
+  readinessGates:
+    - conditionType: "amsy.dev/sample-condition"
+  containers:
+    - name: nginx-container
+      image: nginx:1.16
