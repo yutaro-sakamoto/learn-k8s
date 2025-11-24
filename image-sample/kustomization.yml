@@ -1,0 +1,6 @@
+images:
+  - name: nginx
+    newName: amsy810/echo-nginx
+resources:
+  - sample-deployment.yml
+  - sample-lb.yml
