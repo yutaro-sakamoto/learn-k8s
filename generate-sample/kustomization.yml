@@ -1,0 +1,8 @@
+resources:
+  - sample-deployment.yml
+configMapGenerator:
+  - name: sample-config
+    literals:
+      - KEY1=VAL1
+    files:
+      - ./sample.txt
