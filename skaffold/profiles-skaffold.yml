@@ -1,0 +1,28 @@
+apiVersion: skaffold/v2beta12
+kind: Config
+build:
+  artifacts:
+    - image: dockerhub_user/sample-skaffold
+      docker:
+        dockerfile: ./Dockerfile
+  tagPolicy:
+    dateTime: {}
+profiles:
+  - name: prdProfile
+    build:
+      local:
+        push: true
+    deploy:
+      kubeContext: gke_PROJECT_asia-northeast1-a_k8s
+      kubectl:
+        manifests:
+          - skaffold-*
+  - name: devProfile
+    build:
+      local:
+        push: false
+    deploy:
+      kubeContext: docker-desktop
+      kubectl:
+        manifests:
+          - skaffold-*

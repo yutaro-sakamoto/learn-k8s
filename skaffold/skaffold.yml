@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+build:
+  artifacts:
+    - image: DOCKERHUB_USER/sample-skaffold
+      docker:
+        dockerfile: ./Dockerfile
+  tagPolicy:
+    dateTime: {}
+  local:
+    push: true
+deploy:
+  kubectl:
+    manifests:
+      - skaffold-*
